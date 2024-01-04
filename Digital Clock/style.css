@@ -1,0 +1,130 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2e2e44;
+}
+
+.digital-clock {
+  position: relative;
+  color: #fff;
+  background-color: #2e2e44;
+  width: 425px;
+  padding: 20px 45px;
+  box-shadow: 0 5px 25px rgba(14, 21, 37, 0.8);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.digital-clock:before {
+  content: '';
+  position: absolute;
+  background: linear-gradient(45deg, #24ff6d, #2f93f1, #ff5e9a);
+  background-size: 200% 200%;
+  top: -5px;
+  left: -5px;
+  bottom: -5px;
+  right: -5px;
+  z-index: -1;
+  filter: blur(40px);
+  animation: glowing 10s ease infinite;
+}
+
+/*  Position the navigation icon at the top right corner */
+.dot-menu-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #efefef;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+
+@keyframes glowing {
+  0% { background-position: 0 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+
+/* New styles for updated clock display */
+.hours,
+.minutes {
+  font-size: 5em;
+  color: #fff;
+  font-weight: bold;
+}
+
+.period,
+.seconds {
+  font-size: 0.8em;
+  color: #fff;
+  position: absolute;
+}
+
+/* Adjust PM position */
+.period {
+  position: absolute;
+  font-size: 0.8em;
+  color: #fff;
+  transform: translate(50%, -40%); /* Move it to the top right corner of the minute */
+  top: 30%; /* Adjust vertical positioning */
+  right: 105px; /* Align to the right */
+}
+
+/* Adjust seconds position */
+.seconds {
+  position: absolute;
+  font-size: 0.8em;
+  color: #fff;
+  transform: translate(50%, 50%); /* Move it to the bottom right corner of the minute */
+  bottom: 45%; /* Adjust vertical positioning */
+  right: 105px; /* Align to the right */
+}
+
+
+
+.glowing-text {
+  animation: glowing 2s linear infinite;
+}
+
+
+
+@keyframes glowing {
+  0% {
+    color: #24ff6d;
+  }
+  50% {
+    color: #2f93f1;
+  }
+  100% {
+    color: #ff5e9a;
+  }
+}
+
+/* Existing styles remain unchanged */
+
+/* Line 80 - Apply dark pink color to month, day, and date */
+.month-name,
+.day-name,
+.day-num {
+  color: #ff98d1; /* Change to dark pink color */
+}
+
+/* Line 34 - Increase the size of the colon */
+.dots {
+  font-size: 5em; /* Adjust size as desired */
+}
+
